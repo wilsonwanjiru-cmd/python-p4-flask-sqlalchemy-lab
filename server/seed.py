@@ -43,8 +43,9 @@ with app.app_context():
         a = Animal(name=name, species=rc(species))
         a.zookeeper = rc(zookeepers)
         a.enclosure = rc(enclosures)
+        # a.zookeper_id = a.zookeper.id
+        # a.enclosure_id = a.enclosure_id.id
         animals.append(a)
 
     db.session.add_all(animals)
     db.session.commit()
-
